@@ -2,27 +2,56 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Kevin Vu</title>
+  <title>Kevin Vu's Website</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/flexboxgrid.css">
   <link rel="stylesheet" href="css/font-awesome.css">
   <link rel="shortcut icon" href="Resources/photo.jpg">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+
+
 </head>
 <body>
-  <!-- <div class="container">
-  <div class="brading">
-  <h1>Kevin Vu</h1>
-</div>
-<nav>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="projects.html">Projects</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</nav>
-</div> -->
 
-<header class="v-header container">
+  <div class="wrapper">
+    <header>
+      <nav>
+        <div class="menu-icon">
+            <i class="fa fa-bars fa-2x"></i>
+        </div>
+        <div class="logo">
+          <a href="index.html"><span>KEVIN</span> VU</a>
+        </div>
+        <div class="menu">
+          <ul id="unorderlist">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#section">Portfolio</a></li>
+          </ul>
+        </div>
+        <div id="toggle">
+          <div class="span" id="one"></div>
+          <div class="span" id="two"></div>
+          <div class="span" id="three"></div>
+        </div>
+      </nav>
+    </header>
+
+    <div id="resize">
+      <ul id="unorderlist">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#section">Portfolio</a></li>
+      </ul>
+    </div>
+
+    <div class="header-content">
+      <h1>Hi, I'm Kevin, a computer science graduate and a self-taught iOS, Android, and Web Developer.</h1>
+      <p>Have a project you'd like to discuss? Let's chat!</p>
+      <a href="#section" class="btn">Learn more about what I do</a>
+    </div>
+  </div>
+
+<!-- <header class="v-header container">
   <div class="fullscreen-video-wrap">
     <video src="Resources/code.mov" autoplay="true" loop="true" class="videoInsert"></video>
   </div>
@@ -44,11 +73,12 @@
     <p>Have a project you'd like to discuss? Let's chat!</p>
     <a href="#section" class="btn">Learn more about what I do</a>
   </div>
-</header>
+</header> -->
+
+
 
 
 <!-- PORFOLIO -->
-
 
 <section id="section" class="section">
   <h1 id="porfolioText">PORTFOLIO</h1>
@@ -106,32 +136,41 @@
         </div>
       </div>
       <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 footer-info">
-        <p>I’m a computer science graduate and a self-taught Android, iOS, and Web Engineer. I've spent all my time since graduation in June, 2017 to design and build useful applications to help people lives and at the same time, learning as much as I can because to me the more knowledge I have, the more I can help people.</p>
-        <p>I’m currently working on multiple iOS and Android applications and also thinking about new ideas for my future development</p>
+        <p>I’m a computer science graduate and a self-taught Android, iOS, and Web developer. I've spent all my time since graduation in June, 2017 to design, build, and develop useful applications to help people lives and at the same time, learning as much as I can because to me the more knowledge I have, the more I can help people.</p>
+        <p>I’m currently working on multiple iOS and Android applications and also thinking about new ideas for my future development.</p>
         <p>For my hobbies, I like to watch Game of Thrones, tutorials on YouTube, and travel with my family. Hodl’er. Feverish learner.</p>
       </div>
     </div>
   </div>
-  <!-- <div class="row">
-  <div class="col-md-4">
-  <div class="footer-image"></div>
-  <div class="contact-icons">
-  <a href="https://twitter.com/SeanA0400" target="_blank"><img src="img/index/twitter-icon.png"></a>
-  <a href="mailto:allen.sean.t@gmail.com" class="info-link"><img src="img/index/email-icon.png"></a>
-  <a href="resume/resume-no-address.pdf" target="_blank"><img src="img/index/cv-icon.png"></a>
-</div>
-</div>
-
-<div class="col-md-6 footer-info">
-<p>I’m a self-taught iOS Engineer with 3 years of professional experience. I spent my first 1.5 years leading client side development for a small startup in Silicon Valley, and have been living the independent contractor life ever since.</p>
-<p>I’m currently working on multiple iOS applications with multiple clients ranging from payment tracking, real-time voice communication, food tracking to elementary education.</p>
-<p>Basketball junkie. iOS YouTuber. Star Wars and Game of Thrones nerd. Hodl’er. Feverish learner.</p>
-</div>
-</div> -->
 
 <p id="copyrightText">Handmade by me © 2018.</p>
 
 </footer>
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $(".menu-icon").on("click", function(){
+      $(".wrapper nav ul").toggleClass("showing");
+    });
+  });
+
+  $(window).on("scroll", function(){
+    if($(window).scrollTop()){
+      $('nav').addClass('black');
+    }
+    else{
+      $('nav').removeClass('black');
+    }
+  })
+
+  $("#toggle").click(function(){
+    $(this).toggleClass('on');
+    $("#resize").toggleClass("active");
+  });
+
+
+</script>
 
 </body>
 </html>
